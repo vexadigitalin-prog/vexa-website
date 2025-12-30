@@ -247,6 +247,82 @@
             margin-left: 4px;
         }
 
+        /* How It Works Section */
+        .workflow {
+            background: #ffffff;
+            padding: 6rem 40px;
+        }
+
+        .workflow-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .workflow h2 {
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .workflow-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .workflow-step {
+            flex: 1;
+            min-width: 150px;
+            max-width: 200px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: #FF6B35;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 1rem auto;
+        }
+
+        .step-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .workflow-arrow {
+            font-size: 2rem;
+            color: #FF6B35;
+            font-weight: 300;
+        }
+
+        .workflow-note {
+            background: #f8f8f8;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #FF6B35;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .workflow-note p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
         /* Temporary content */
         .temp-content {
             padding: 100px 20px;
@@ -262,6 +338,9 @@
             }
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+            .workflow-arrow {
+                display: none;
             }
         }
     </style>
@@ -348,10 +427,43 @@
         </div>
     </section>
 
+    <!-- How It Works Section -->
+    <section id="workflow" class="workflow">
+        <div class="workflow-container">
+            <h2>HOW IT WORKS</h2>
+            
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Book</div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Diagnose</div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Quote</div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Execute</div>
+                </div>
+            </div>
+
+            <div class="workflow-note">
+                <p><strong>All services start with consultation.</strong> During the call, I'll diagnose your actual problem and recommend the right service. Pricing for larger services is discussed after diagnosis, ensuring you only pay for what you actually need.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Temporary content -->
     <div class="temp-content">
-        <p>Navigation + Hero + About + Services complete</p>
-        <p>Next: How It Works section</p>
+        <p>Navigation + Hero + About + Services + How It Works complete</p>
+        <p>Next: Contact section with booking popup</p>
     </div>
 </body>
 </html>
