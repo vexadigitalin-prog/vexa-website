@@ -118,11 +118,77 @@
             color: #e0e0e0;
         }
 
-        /* Temporary content for testing */
+        /* About Section */
+        .about {
+            background: #ffffff;
+            padding: 6rem 40px;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .about-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        .about-card h3 {
+            color: #FF6B35;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .about-card p {
+            color: #333;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .principle {
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-style: italic;
+            color: #1a1a1a;
+        }
+
+        /* Temporary content */
         .temp-content {
             padding: 100px 20px;
             text-align: center;
             color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
     </style>
 </head>
@@ -148,10 +214,32 @@
         <p>Most esports organizations fail because they chase sponsorship before structure.</p>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2>ABOUT VEXA</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>MISSION</h3>
+                    <p>To build sustainable revenue systems for esports organizations that reduce dependency on external validation and create owned revenue pathways.</p>
+                </div>
+                <div class="about-card">
+                    <h3>VISION</h3>
+                    <p>An Indian esports ecosystem where organizations operate as businesses, not funded projects—where structure precedes sponsorship, and architecture precedes scale.</p>
+                </div>
+                <div class="about-card">
+                    <h3>ABOUT ME</h3>
+                    <p>VEXA Digital provides diagnostic, architectural, and supervisory services to esports organizations seeking sustainable business models beyond sponsorship dependency.</p>
+                    <p class="principle" style="margin-top: 1.5rem;">Very Easy is Never Awesome</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Temporary content -->
     <div class="temp-content">
-        <p>Navigation + Hero section complete</p>
-        <p>Next: About section (Mission, Vision, About Me)</p>
+        <p>Navigation + Hero + About section complete</p>
+        <p>Next: Services section</p>
     </div>
 </body>
 </html>
