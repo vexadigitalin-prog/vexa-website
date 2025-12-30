@@ -79,6 +79,8 @@
             font-size: 0.9rem;
             transition: all 0.3s;
             opacity: 0.9;
+            cursor: pointer;
+            border: none;
         }
 
         .book-btn:hover {
@@ -323,11 +325,186 @@
             font-size: 0.95rem;
         }
 
-        /* Temporary content */
-        .temp-content {
-            padding: 100px 20px;
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 6rem 40px;
             text-align: center;
-            color: #666;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: #e0e0e0;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .contact-item h4 {
+            color: #FF6B35;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #FF6B35;
+        }
+
+        /* Popup Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 10% auto;
+            padding: 3rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 20px;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .modal-content h3 {
+            color: #FF6B35;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .modal-content .price {
+            color: #1a1a1a;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-content ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .modal-content ul li {
+            padding: 0.5rem 0;
+            color: #555;
+        }
+
+        .modal-content ul li::before {
+            content: "✓ ";
+            color: #FF6B35;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            color: #FF6B35;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FF6B35;
+        }
+
+        .footer-principle {
+            margin: 2rem 0;
+            font-style: italic;
+            color: #e0e0e0;
+        }
+
+        .footer-brand {
+            color: #888;
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -340,6 +517,9 @@
                 grid-template-columns: 1fr;
             }
             .workflow-arrow {
+                display: none;
+            }
+            .nav-menu {
                 display: none;
             }
         }
@@ -356,7 +536,7 @@
                 <li><a href="#workflow">How It Works</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#book" class="book-btn">Book Consultation</a>
+            <button class="book-btn" onclick="openModal()">Book Consultation</button>
         </div>
     </nav>
 
@@ -460,10 +640,80 @@
         </div>
     </section>
 
-    <!-- Temporary content -->
-    <div class="temp-content">
-        <p>Navigation + Hero + About + Services + How It Works complete</p>
-        <p>Next: Contact section with booking popup</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>READY TO START?</h2>
+            <p>Get in touch to discuss your esports business architecture needs.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <a href="mailto:vexadigital.in@gmail.com">vexadigital.in@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <a href="tel:+919958895505">+91 9958895505</a>
+                </div>
+            </div>
+
+            <button class="book-btn" onclick="openModal()">Book Consultation</button>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>CONSULTATION</h3>
+            <div class="price">₹3,000 | 30-45 minutes</div>
+            <ul>
+                <li>One-time diagnostic video call</li>
+                <li>Verbal diagnosis of your business state</li>
+                <li>Reality check on viability</li>
+                <li>Clear direction on next steps</li>
+            </ul>
+            <p style="color: #555; margin-bottom: 2rem;">Contact via email or phone to book your slot.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="mailto:vexadigital.in@gmail.com" class="book-btn">Email</a>
+                <a href="tel:+919958895505" class="book-btn">Call</a>
+            </div>
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">VEXA DIGITAL</div>
+            <p>Esports Business Architecture & Advisory</p>
+            
+            <div class="footer-links">
+                <a href="mailto:vexadigital.in@gmail.com">Email</a>
+                <a href="tel:+919958895505">Phone</a>
+                <a href="https://instagram.com/vexadigital.in" target="_blank">Instagram</a>
+                <a href="https://linkedin.com/company/vexa-digital" target="_blank">LinkedIn</a>
+            </div>
+            
+            <p class="footer-principle">Operating Principle: Very Easy is Never Awesome</p>
+            <p class="footer-brand">VEXA Digital</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('bookingModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
