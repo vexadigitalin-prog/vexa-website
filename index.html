@@ -17,19 +17,20 @@
             color: #1a1a1a;
         }
 
+        /* Navigation Bar */
         nav {
             background: #1a1a1a;
-            padding: 1rem 0;
+            padding: 1.2rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,517 +38,89 @@
 
         .logo {
             color: #FF6B35;
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 1.5rem;
+            font-weight: 700;
             text-decoration: none;
+            letter-spacing: 1px;
         }
 
-        .nav-links {
+        .nav-menu {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             list-style: none;
+            align-items: center;
         }
 
-        .nav-links a {
-            color: white;
+        .nav-menu a {
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            position: relative;
         }
 
-        .nav-links a:hover {
+        .nav-menu a:hover {
             color: #FF6B35;
+        }
+
+        /* Dropdown indicator */
+        .has-dropdown::after {
+            content: ' ▼';
+            font-size: 0.7rem;
+            margin-left: 4px;
         }
 
         .book-btn {
             background: #FF6B35;
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
+            padding: 0.7rem 1.8rem;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            opacity: 0.9;
         }
 
         .book-btn:hover {
-            background: #e55a25;
+            opacity: 1;
+            transform: translateY(-1px);
         }
 
-        .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-            padding: 6rem 20px;
+        /* Temporary body content for testing */
+        .temp-content {
+            padding: 100px 20px;
             text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #FF6B35;
-        }
-
-        .hero h2 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-        }
-
-        section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 20px;
-        }
-
-        .section-dark {
-            background: #f8f8f8;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #1a1a1a;
-            text-align: center;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #FF6B35;
-        }
-
-        .mission-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .mission-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        .price {
-            color: #FF6B35;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .workflow-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .workflow-steps {
-            margin: 1.5rem 0;
-        }
-
-        .step {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .step-number {
-            background: #FF6B35;
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 1rem;
-            flex-shrink: 0;
-        }
-
-        .why-box {
-            background: #fff3cd;
-            padding: 1.5rem;
-            border-left: 4px solid #FF6B35;
-            margin-top: 1rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .contact-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item h4 {
-            color: #1a1a1a;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item a {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            color: #FF6B35;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #FF6B35;
-        }
-
-        .submit-btn {
-            background: #FF6B35;
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #e55a25;
-        }
-
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 3rem 20px;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            margin: 1rem 0;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-
-        .footer-links a:hover {
-            color: #FF6B35;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mission-grid,
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+            color: #666;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">VEXA DIGITAL</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+            <ul class="nav-menu">
+                <li><a href="#about" class="has-dropdown">About</a></li>
+                <li><a href="#services" class="has-dropdown">Services</a></li>
                 <li><a href="#workflow">How It Works</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="book-btn">Book Consultation - ₹3,000</a>
+            <a href="#book" class="book-btn">Book Consultation</a>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>VEXA DIGITAL</h1>
-        <h2>Esports Business Architecture & Advisory</h2>
-        <p>Most esports organizations fail because they chase sponsorship before structure.</p>
-        <p>VEXA exists to diagnose, architect, and supervise sustainable business models in esports.</p>
-        <a href="#contact" class="book-btn">Book Consultation - ₹3,000</a>
-    </section>
-
-    <section id="about">
-        <h2>ABOUT VEXA</h2>
-        <div class="mission-grid">
-            <div class="mission-card">
-                <h3>MISSION</h3>
-                <p>To build sustainable revenue systems for esports organizations that reduce dependency on external validation and create owned revenue pathways.</p>
-            </div>
-            <div class="mission-card">
-                <h3>VISION</h3>
-                <p>An Indian esports ecosystem where organizations operate as businesses, not funded projects—where structure precedes sponsorship, and architecture precedes scale.</p>
-            </div>
-            <div class="mission-card">
-                <h3>OPERATING PRINCIPLE</h3>
-                <p style="font-size: 1.3rem; font-weight: 700; font-style: italic;">Very Easy is Never Awesome</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section-dark">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 4rem 20px;">
-            <h2>SERVICES</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>CONSULTATION</h3>
-                    <p class="price">₹3,000 | 30-45 minutes</p>
-                    <p>A diagnostic call where we review your current business state and identify structural failures.</p>
-                    <ul>
-                        <li>One-time video call</li>
-                        <li>Verbal diagnosis</li>
-                        <li>Reality check on viability</li>
-                        <li>Clear direction on next steps</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <h3>BUSINESS AUDIT</h3>
-                    <p class="price">Quoted after consultation | 7-10 days</p>
-                    <p>Comprehensive review of your existing business plan or pitch deck.</p>
-                    <ul>
-                        <li>Revenue logic review</li>
-                        <li>Written corrective document</li>
-                        <li>Follow-up call</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <h3>BLUEPRINT CREATION</h3>
-                    <p class="price">Quoted after consultation | 14-21 days</p>
-                    <p>Ground-up creation of complete business architecture.</p>
-                    <ul>
-                        <li>Full architecture document</li>
-                        <li>Revenue pathways</li>
-                        <li>6-12 month roadmap</li>
-                        <li>Strategy calls + email support</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <h3>SPONSORSHIP OUTREACH</h3>
-                    <p class="price">Quoted after consultation | 3 months</p>
-                    <p>We execute outreach to brands on your behalf.</p>
-                    <ul>
-                        <li>Deck review & correction</li>
-                        <li>3-month outreach to 20-30 brands</li>
-                        <li>Bi-weekly updates</li>
-                        <li>Meeting coordination</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <h3>ADVISORY RETAINER</h3>
-                    <p class="price">Invitation-only | 3-month minimum</p>
-                    <p>Ongoing strategic supervision for serious operators.</p>
-                    <ul>
-                        <li>Weekly check-ins</li>
-                        <li>2 monthly strategy calls</li>
-                        <li>Async access</li>
-                        <li>Quarterly reviews</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="workflow">
-        <h2>HOW IT WORKS</h2>
-        
-        <div class="workflow-item">
-            <h3>CONSULTATION WORKFLOW</h3>
-            <div class="workflow-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div>Pay ₹3,000</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div>Book a slot (within 48 hours)</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div>Have the call (30-45 minutes)</div>
-                </div>
-            </div>
-            <div class="why-box">
-                <strong>WHY THIS FLOW:</strong> The ₹3,000 payment filters serious clients from time-wasters. During the call, I'll diagnose your actual problem and tell you what you need—not what you think you need.
-            </div>
-        </div>
-
-        <div class="workflow-item">
-            <h3>OTHER SERVICES WORKFLOW</h3>
-            <div class="workflow-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div>Book consultation first (₹3,000)</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div>I diagnose and quote pricing</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div>You decide within 24 hours</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div>Pay and work begins</div>
-                </div>
-            </div>
-            <div class="why-box">
-                <strong>WHY THIS FLOW:</strong> All services require consultation first. This ensures we're aligned on what you actually need before you invest in larger services.
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-dark">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 4rem 20px;">
-            <h2>CONTACT & BOOK</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>REACH OUT</h3>
-                    <div class="contact-item">
-                        <h4>Email</h4>
-                        <a href="mailto:vexadigital.in@gmail.com">vexadigital.in@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Phone</h4>
-                        <a href="tel:+919958895505">+91 9958895505</a>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Follow Us</h4>
-                        <p><a href="https://instagram.com/vexadigital.in" target="_blank">Instagram: @vexadigital.in</a></p>
-                        <p><a href="https://linkedin.com/company/vexa-digital" target="_blank">LinkedIn: VEXA Digital</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-form">
-                    <h3>SEND A MESSAGE</h3>
-                    <form action="mailto:vexadigital.in@gmail.com" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <h3 style="color: #FF6B35;">VEXA DIGITAL</h3>
-            <p>Esports Business Architecture & Advisory</p>
-            <div class="footer-links">
-                <a href="mailto:vexadigital.in@gmail.com">Email</a>
-                <a href="tel:+919958895505">Phone</a>
-                <a href="https://instagram.com/vexadigital.in" target="_blank">Instagram</a>
-                <a href="https://linkedin.com/company/vexa-digital" target="_blank">LinkedIn</a>
-            </div>
-            <p style="margin-top: 2rem; opacity: 0.8;">Operating Principle: Very Easy is Never Awesome</p>
-            <p style="opacity: 0.6;">© 2024 VEXA Digital. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- Temporary content to see the nav -->
+    <div class="temp-content">
+        <h1>Navigation bar created</h1>
+        <p>Scroll down to see sticky navigation</p>
+        <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
+        <p>Keep scrolling...</p>
+        <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
+    </div>
 </body>
 </html>
