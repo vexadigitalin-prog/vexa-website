@@ -57,7 +57,6 @@
             font-weight: 500;
             font-size: 0.95rem;
             transition: color 0.3s;
-            position: relative;
         }
 
         .nav-menu a:hover {
@@ -176,6 +175,78 @@
             color: #1a1a1a;
         }
 
+        /* Services Section */
+        .services {
+            background: #f8f8f8;
+            padding: 6rem 40px;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 {
+            color: #FF6B35;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-btn {
+            color: #FF6B35;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .details-btn:hover {
+            color: #e55a25;
+        }
+
+        .details-btn::after {
+            content: ' ▼';
+            font-size: 0.7rem;
+            margin-left: 4px;
+        }
+
         /* Temporary content */
         .temp-content {
             padding: 100px 20px;
@@ -188,6 +259,9 @@
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -236,10 +310,48 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-container">
+            <h2>SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>CONSULTATION</h3>
+                    <p>A diagnostic call where we review your current business state and identify structural failures.</p>
+                    <a href="#" class="details-btn">Details</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>BUSINESS AUDIT</h3>
+                    <p>Comprehensive review of your existing business plan or pitch deck to identify why it's not working.</p>
+                    <a href="#" class="details-btn">Details</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>BLUEPRINT CREATION</h3>
+                    <p>Ground-up creation of complete business architecture designed to reduce sponsor dependency.</p>
+                    <a href="#" class="details-btn">Details</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>SPONSORSHIP OUTREACH</h3>
+                    <p>We audit your deck, correct your strategy, and execute outreach to brands on your behalf.</p>
+                    <a href="#" class="details-btn">Details</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>ADVISORY RETAINER</h3>
+                    <p>Ongoing strategic supervision for organizations that have completed an Audit or Blueprint.</p>
+                    <a href="#" class="details-btn">Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Temporary content -->
     <div class="temp-content">
-        <p>Navigation + Hero + About section complete</p>
-        <p>Next: Services section</p>
+        <p>Navigation + Hero + About + Services complete</p>
+        <p>Next: How It Works section</p>
     </div>
 </body>
 </html>
