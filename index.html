@@ -63,12 +63,6 @@
             color: #FF6B35;
         }
 
-        .has-dropdown::after {
-            content: ' ▼';
-            font-size: 0.7rem;
-            margin-left: 4px;
-        }
-
         .book-btn {
             background: #FF6B35;
             color: white;
@@ -79,8 +73,6 @@
             font-size: 0.9rem;
             transition: all 0.3s;
             opacity: 0.9;
-            cursor: pointer;
-            border: none;
         }
 
         .book-btn:hover {
@@ -114,7 +106,7 @@
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 3rem auto;
             line-height: 1.8;
             color: #e0e0e0;
         }
@@ -142,6 +134,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
+            margin-bottom: 4rem;
         }
 
         .about-card {
@@ -177,6 +170,25 @@
             color: #1a1a1a;
         }
 
+        .about-me-full {
+            background: #f8f8f8;
+            padding: 3rem;
+            border-radius: 8px;
+            border-left: 4px solid #FF6B35;
+        }
+
+        .about-me-full h3 {
+            color: #FF6B35;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-me-full p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
         /* Services Section */
         .services {
             background: #f8f8f8;
@@ -186,14 +198,23 @@
         .services-container {
             max-width: 1200px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .services h2 {
-            text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             color: #1a1a1a;
             font-weight: 700;
+        }
+
+        .services-intro {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .services-grid {
@@ -209,6 +230,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
         }
 
         .service-card:hover {
@@ -230,231 +252,13 @@
             margin-bottom: 1.5rem;
         }
 
-        .details-btn {
-            color: #FF6B35;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
+        .cta-section {
+            margin-top: 3rem;
+        }
+
+        .cta-section a {
             display: inline-block;
-            transition: color 0.3s;
-        }
-
-        .details-btn:hover {
-            color: #e55a25;
-        }
-
-        .details-btn::after {
-            content: ' ▼';
-            font-size: 0.7rem;
-            margin-left: 4px;
-        }
-
-        /* How It Works Section */
-        .workflow {
-            background: #ffffff;
-            padding: 6rem 40px;
-        }
-
-        .workflow-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .workflow h2 {
-            font-size: 2.5rem;
-            margin-bottom: 4rem;
-            color: #1a1a1a;
-            font-weight: 700;
-        }
-
-        .workflow-steps {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .workflow-step {
-            flex: 1;
-            min-width: 150px;
-            max-width: 200px;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: #FF6B35;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0 auto 1rem auto;
-        }
-
-        .step-label {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        .workflow-arrow {
-            font-size: 2rem;
-            color: #FF6B35;
-            font-weight: 300;
-        }
-
-        .workflow-note {
-            background: #f8f8f8;
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid #FF6B35;
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .workflow-note p {
-            color: #555;
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-            padding: 6rem 40px;
-            text-align: center;
-        }
-
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #ffffff;
-            font-weight: 700;
-        }
-
-        .contact p {
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            color: #e0e0e0;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .contact-item h4 {
-            color: #FF6B35;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .contact-item a {
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: #FF6B35;
-        }
-
-        /* Popup Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            animation: fadeIn 0.3s;
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            margin: 10% auto;
-            padding: 3rem;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 500px;
-            position: relative;
-            animation: slideIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            line-height: 20px;
-        }
-
-        .close:hover {
-            color: #000;
-        }
-
-        .modal-content h3 {
-            color: #FF6B35;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .modal-content .price {
-            color: #1a1a1a;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-content ul {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .modal-content ul li {
-            padding: 0.5rem 0;
-            color: #555;
-        }
-
-        .modal-content ul li::before {
-            content: "✓ ";
-            color: #FF6B35;
-            font-weight: bold;
-            margin-right: 0.5rem;
+            margin: 0 1rem;
         }
 
         /* Footer */
@@ -502,11 +306,6 @@
             color: #e0e0e0;
         }
 
-        .footer-brand {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .about-grid {
@@ -516,11 +315,9 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            .workflow-arrow {
-                display: none;
-            }
             .nav-menu {
-                display: none;
+                gap: 1.5rem;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -529,14 +326,13 @@
     <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">VEXA DIGITAL</a>
+            <a href="index.html" class="logo">VEXA DIGITAL</a>
             <ul class="nav-menu">
-                <li><a href="#about" class="has-dropdown">About</a></li>
-                <li><a href="#services" class="has-dropdown">Services</a></li>
-                <li><a href="#workflow">How It Works</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="book-btn" onclick="openModal()">Book Consultation</button>
+            <a href="booking.html" class="book-btn">Book Consultation</a>
         </div>
     </nav>
 
@@ -545,6 +341,7 @@
         <h1>VEXA DIGITAL</h1>
         <h2>Esports Business Architecture</h2>
         <p>Most esports organizations fail because they chase sponsorship before structure.</p>
+        <a href="booking.html" class="book-btn">Start Your Journey</a>
     </section>
 
     <!-- About Section -->
@@ -561,10 +358,18 @@
                     <p>An Indian esports ecosystem where organizations operate as businesses, not funded projects—where structure precedes sponsorship, and architecture precedes scale.</p>
                 </div>
                 <div class="about-card">
-                    <h3>ABOUT ME</h3>
-                    <p>VEXA Digital provides diagnostic, architectural, and supervisory services to esports organizations seeking sustainable business models beyond sponsorship dependency.</p>
+                    <h3>PRINCIPLE</h3>
+                    <p>We believe in building foundations before facades. Structure before scale. Architecture before aesthetics.</p>
                     <p class="principle" style="margin-top: 1.5rem;">Very Easy is Never Awesome</p>
                 </div>
+            </div>
+
+            <div class="about-me-full">
+                <h3>ABOUT ME</h3>
+                <p>VEXA Digital was founded to address a critical gap in the Indian esports ecosystem: the absence of sustainable business architecture. Too many organizations chase sponsorships without building the foundational systems that make them sponsorship-worthy.</p>
+                <p>With experience in business strategy, revenue architecture, and the esports industry, I provide diagnostic, architectural, and supervisory services to organizations seeking to transition from funded projects to self-sustaining businesses.</p>
+                <p>My approach is direct, diagnostic, and focused on reality—not hype. I work with organizations that are ready to build structure, not just chase validation.</p>
+                <p><strong>Operating Principle:</strong> Very Easy is Never Awesome. If building a sustainable esports business were easy, everyone would do it. The difficulty is the filter.</p>
             </div>
         </div>
     </section>
@@ -573,147 +378,58 @@
     <section id="services" class="services">
         <div class="services-container">
             <h2>SERVICES</h2>
+            <p class="services-intro">All services are designed to reduce sponsor dependency and build owned revenue pathways. Every engagement starts with consultation.</p>
+            
             <div class="services-grid">
                 <div class="service-card">
                     <h3>CONSULTATION</h3>
-                    <p>A diagnostic call where we review your current business state and identify structural failures.</p>
-                    <a href="#" class="details-btn">Details</a>
+                    <p>A diagnostic call where we review your current business state and identify structural failures. Reality check included.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>BUSINESS AUDIT</h3>
-                    <p>Comprehensive review of your existing business plan or pitch deck to identify why it's not working.</p>
-                    <a href="#" class="details-btn">Details</a>
+                    <p>Comprehensive review of your existing business plan or pitch deck to identify why it's not working and what needs to change.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>BLUEPRINT CREATION</h3>
-                    <p>Ground-up creation of complete business architecture designed to reduce sponsor dependency.</p>
-                    <a href="#" class="details-btn">Details</a>
+                    <p>Ground-up creation of complete business architecture designed to reduce sponsor dependency and create owned revenue.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>SPONSORSHIP OUTREACH</h3>
-                    <p>We audit your deck, correct your strategy, and execute outreach to brands on your behalf.</p>
-                    <a href="#" class="details-btn">Details</a>
+                    <p>We audit your deck, correct your strategy, and execute outreach to brands on your behalf with proper positioning.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>ADVISORY RETAINER</h3>
-                    <p>Ongoing strategic supervision for organizations that have completed an Audit or Blueprint.</p>
-                    <a href="#" class="details-btn">Details</a>
+                    <p>Ongoing strategic supervision for organizations that have completed an Audit or Blueprint and need execution support.</p>
                 </div>
+            </div>
+
+            <div class="cta-section">
+                <a href="services.html" class="book-btn">View Detailed Services</a>
+                <a href="booking.html" class="book-btn">Book Consultation</a>
             </div>
         </div>
     </section>
-
-    <!-- How It Works Section -->
-    <section id="workflow" class="workflow">
-        <div class="workflow-container">
-            <h2>HOW IT WORKS</h2>
-            
-            <div class="workflow-steps">
-                <div class="workflow-step">
-                    <div class="step-number">1</div>
-                    <div class="step-label">Book</div>
-                </div>
-                <div class="workflow-arrow">→</div>
-                <div class="workflow-step">
-                    <div class="step-number">2</div>
-                    <div class="step-label">Diagnose</div>
-                </div>
-                <div class="workflow-arrow">→</div>
-                <div class="workflow-step">
-                    <div class="step-number">3</div>
-                    <div class="step-label">Quote</div>
-                </div>
-                <div class="workflow-arrow">→</div>
-                <div class="workflow-step">
-                    <div class="step-number">4</div>
-                    <div class="step-label">Execute</div>
-                </div>
-            </div>
-
-            <div class="workflow-note">
-                <p><strong>All services start with consultation.</strong> During the call, I'll diagnose your actual problem and recommend the right service. Pricing for larger services is discussed after diagnosis, ensuring you only pay for what you actually need.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <h2>READY TO START?</h2>
-            <p>Get in touch to discuss your esports business architecture needs.</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h4>Email</h4>
-                    <a href="mailto:vexadigital.in@gmail.com">vexadigital.in@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <h4>Phone</h4>
-                    <a href="tel:+919958895505">+91 9958895505</a>
-                </div>
-            </div>
-
-            <button class="book-btn" onclick="openModal()">Book Consultation</button>
-        </div>
-    </section>
-
-    <!-- Booking Modal -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h3>CONSULTATION</h3>
-            <div class="price">₹3,000 | 30-45 minutes</div>
-            <ul>
-                <li>One-time diagnostic video call</li>
-                <li>Verbal diagnosis of your business state</li>
-                <li>Reality check on viability</li>
-                <li>Clear direction on next steps</li>
-            </ul>
-            <p style="color: #555; margin-bottom: 2rem;">Contact via email or phone to book your slot.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="mailto:vexadigital.in@gmail.com" class="book-btn">Email</a>
-                <a href="tel:+919958895505" class="book-btn">Call</a>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="footer-content">
             <div class="footer-logo">VEXA DIGITAL</div>
             <p>Esports Business Architecture & Advisory</p>
             
             <div class="footer-links">
-                <a href="mailto:vexadigital.in@gmail.com">Email</a>
-                <a href="tel:+919958895505">Phone</a>
+                <a href="mailto:vexadigital.in@gmail.com">vexadigital.in@gmail.com</a>
+                <a href="tel:+919958895505">+91 9958895505</a>
                 <a href="https://instagram.com/vexadigital.in" target="_blank">Instagram</a>
-                <a href="https://linkedin.com/company/vexa-digital" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/company/vexa-digital-in/" target="_blank">LinkedIn</a>
             </div>
             
             <p class="footer-principle">Operating Principle: Very Easy is Never Awesome</p>
-            <p class="footer-brand">VEXA Digital</p>
+            <p style="color: #888; margin-top: 2rem;">VEXA Digital</p>
         </div>
     </footer>
-
-    <script>
-        function openModal() {
-            document.getElementById('bookingModal').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('bookingModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            var modal = document.getElementById('bookingModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>
