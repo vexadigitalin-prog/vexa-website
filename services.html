@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - VEXA Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #1a1a1a;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #FF6B35;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #FF6B35;
+        }
+
+        .book-btn {
+            background: #FF6B35;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            opacity: 0.9;
+        }
+
+        .book-btn:hover {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 5rem 40px 3rem 40px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #FF6B35;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Services Detail Section */
+        .services-detail {
+            padding: 5rem 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-block {
+            background: #ffffff;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid #FF6B35;
+        }
+
+        .service-block h2 {
+            color: #FF6B35;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-block .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-block .duration {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-block h3 {
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-block ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-block ul li {
+            padding: 0.5rem 0;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .service-block ul li::before {
+            content: "✓ ";
+            color: #FF6B35;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .service-block p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .service-block .note {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+            border-left: 3px solid #FF6B35;
+        }
+
+        .service-block .note strong {
+            color: #FF6B35;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #f8f8f8;
+            padding: 4rem 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            color: #FF6B35;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FF6B35;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1.5rem;
+                font-size: 0.85rem;
+            }
+            .service-block {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">VEXA DIGITAL</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Consultation</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>SERVICES</h1>
+        <p>Comprehensive business architecture services designed to reduce sponsor dependency and build sustainable revenue systems.</p>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="services-detail">
+        
+        <!-- Service 1: Consultation -->
+        <div class="service-block">
+            <h2>CONSULTATION</h2>
+            <div class="price">₹3,000</div>
+            <div class="duration">30-45 minutes | Video Call</div>
+            
+            <h3>What You Get:</h3>
+            <ul>
+                <li>One-time diagnostic video call</li>
+                <li>Verbal diagnosis of your current business state</li>
+                <li>Reality check on viability and market positioning</li>
+                <li>Identification of structural failures</li>
+                <li>Clear direction on next steps</li>
+                <li>Service recommendation based on your actual needs</li>
+            </ul>
+
+            <h3>Who This Is For:</h3>
+            <p>Organizations that need clarity on their current state, want to understand what's broken, or need direction before committing to larger services.</p>
+
+            <div class="note">
+                <strong>Note:</strong> All larger services (Audit, Blueprint, Outreach, Retainer) start with this consultation. The consultation fee is deducted if you proceed with a larger service.
+            </div>
+        </div>
+
+        <!-- Service 2: Business Audit -->
+        <div class="service-block">
+            <h2>BUSINESS AUDIT</h2>
+            <div class="price">Quoted After Consultation</div>
+            <div class="duration">7-10 days delivery</div>
+            
+            <h3>What You Get:</h3>
+            <ul>
+                <li>Comprehensive review of existing business plan or pitch deck</li>
+                <li>Written diagnostic report identifying structural failures</li>
+                <li>Analysis of revenue model viability</li>
+                <li>Market positioning assessment</li>
+                <li>Sponsorship readiness evaluation</li>
+                <li>Prioritized action items with implementation roadmap</li>
+                <li>One follow-up call to discuss findings</li>
+            </ul>
+
+            <h3>Who This Is For:</h3>
+            <p>Organizations with existing business plans or pitch decks that aren't working. You've tried pitching sponsors, investors, or partners—but nothing is landing.</p>
+
+            <div class="note">
+                <strong>Prerequisite:</strong> Requires consultation first. Pricing depends on complexity and scope identified during consultation.
+            </div>
+        </div>
+
+        <!-- Service 3: Blueprint Creation -->
+        <div class="service-block">
+            <h2>BLUEPRINT CREATION</h2>
+            <div class="price">Quoted After Consultation</div>
+            <div class="duration">14-21 days delivery</div>
+            
+            <h3>What You Get:</h3>
+            <ul>
+                <li>Complete business architecture built from ground up</li>
+                <li>Revenue model designed to reduce sponsor dependency</li>
+                <li>Owned revenue pathway identification and structuring</li>
+                <li>Market positioning and differentiation strategy</li>
+                <li>Operational structure and resource allocation</li>
+                <li>Financial projections and sustainability roadmap</li>
+                <li>Sponsorship-ready pitch deck (if applicable)</li>
+                <li>Two review calls during creation process</li>
+            </ul>
+
+            <h3>Who This Is For:</h3>
+            <p>Organizations starting from scratch or those whose existing structure is fundamentally broken. You need complete business architecture, not just tweaks.</p>
+
+            <div class="note">
+                <strong>Prerequisite:</strong> Requires consultation first. This is the most comprehensive service and pricing reflects scope, complexity, and your organization's specific needs.
+            </div>
+        </div>
+
+        <!-- Service 4: Sponsorship Outreach -->
+        <div class="service-block">
+            <h2>SPONSORSHIP OUTREACH</h2>
+            <div class="price">Quoted After Consultation</div>
+            <div class="duration">30-45 days execution</div>
+            
+            <h3>What You Get:</h3>
+            <ul>
+                <li>Audit of existing pitch deck and positioning</li>
+                <li>Correction of messaging and value proposition</li>
+                <li>Brand identification and targeting strategy</li>
+                <li>Outreach execution on your behalf</li>
+                <li>Professional communication with brands</li>
+                <li>Follow-up management and negotiation support</li>
+                <li>Weekly progress reports</li>
+            </ul>
+
+            <h3>Who This Is For:</h3>
+            <p>Organizations with solid business structure who need help executing sponsorship outreach professionally. You have the foundation—you need the execution.</p>
+
+            <div class="note">
+                <strong>Prerequisite:</strong> Requires consultation + either completed Audit or Blueprint. We don't execute outreach for organizations without proper structure.
+            </div>
+        </div>
+
+        <!-- Service 5: Advisory Retainer -->
+        <div class="service-block">
+            <h2>ADVISORY RETAINER</h2>
+            <div class="price">Quoted After Consultation</div>
+            <div class="duration">Monthly engagement</div>
+            
+            <h3>What You Get:</h3>
+            <ul>
+                <li>Ongoing strategic supervision and guidance</li>
+                <li>Monthly review calls (2-4 per month based on tier)</li>
+                <li>Email/message support for strategic decisions</li>
+                <li>Review of new initiatives and opportunities</li>
+                <li>Course correction when needed</li>
+                <li>Accountability and execution tracking</li>
+                <li>Priority access for urgent consultations</li>
+            </ul>
+
+            <h3>Who This Is For:</h3>
+            <p>Organizations that have completed an Audit or Blueprint and need ongoing supervision during execution. You have the plan—you need accountability and strategic oversight.</p>
+
+            <div class="note">
+                <strong>Prerequisite:</strong> Only available to organizations that have completed Business Audit or Blueprint Creation. Retainer pricing is tiered based on engagement level needed.
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>READY TO START?</h2>
+        <p>All services begin with consultation. Book your diagnostic call to identify what you actually need.</p>
+        <a href="booking.html" class="book-btn">Book Consultation - ₹3,000</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">VEXA DIGITAL</div>
+            <p>Esports Business Architecture & Advisory</p>
+            
+            <div class="footer-links">
+                <a href="mailto:vexadigital.in@gmail.com">vexadigital.in@gmail.com</a>
+                <a href="tel:+919958895505">+91 9958895505</a>
+                <a href="https://instagram.com/vexadigital.in" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/company/vexa-digital-in/" target="_blank">LinkedIn</a>
+            </div>
+            
+            <p style="font-style: italic; margin: 2rem 0; color: #e0e0e0;">Operating Principle: Very Easy is Never Awesome</p>
+            <p style="color: #888;">VEXA Digital</p>
+        </div>
+    </footer>
+</body>
+</html>
