@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Consultation - VEXA Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f8f8;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #1a1a1a;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #FF6B35;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #FF6B35;
+        }
+
+        .book-btn {
+            background: #FF6B35;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            opacity: 0.9;
+            border: none;
+            cursor: pointer;
+        }
+
+        .book-btn:hover {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        /* Booking Section */
+        .booking-container {
+            max-width: 900px;
+            margin: 5rem auto;
+            padding: 0 40px;
+        }
+
+        .booking-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .booking-header h1 {
+            font-size: 3rem;
+            color: #FF6B35;
+            margin-bottom: 1rem;
+        }
+
+        .booking-header p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .booking-card {
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .booking-card h2 {
+            color: #FF6B35;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .booking-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .booking-card .duration {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .booking-card h3 {
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .booking-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .booking-card ul li {
+            padding: 0.7rem 0;
+            color: #555;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .booking-card ul li::before {
+            content: "✓ ";
+            color: #FF6B35;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .process-section {
+            background: #f8f8f8;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .process-section h3 {
+            color: #FF6B35;
+            margin-bottom: 1.5rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #FF6B35;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem auto;
+        }
+
+        .step-label {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-desc {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-card h4 {
+            color: #FF6B35;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-card .book-btn {
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .note-box {
+            background: #fff3e0;
+            border-left: 4px solid #FF6B35;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .note-box strong {
+            color: #FF6B35;
+        }
+
+        .note-box p {
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 40px;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            color: #FF6B35;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FF6B35;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1.5rem;
+                font-size: 0.85rem;
+            }
+            .booking-card {
+                padding: 2rem;
+            }
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">VEXA DIGITAL</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Consultation</a>
+        </div>
+    </nav>
+
+    <!-- Booking Section -->
+    <div class="booking-container">
+        <div class="booking-header">
+            <h1>BOOK CONSULTATION</h1>
+            <p>Start your journey toward sustainable esports business architecture</p>
+        </div>
+
+        <div class="booking-card">
+            <h2>CONSULTATION</h2>
+            <div class="price">₹3,000</div>
+            <div class="duration">30-45 minutes | Video Call</div>
+
+            <h3>What You Get:</h3>
+            <ul>
+                <li>One-time diagnostic video call</li>
+                <li>Verbal diagnosis of your current business state</li>
+                <li>Reality check on viability and market positioning</li>
+                <li>Identification of structural failures</li>
+                <li>Clear direction on next steps</li>
+                <li>Service recommendation based on your actual needs</li>
+            </ul>
+
+            <div class="note-box">
+                <strong>Important:</strong>
+                <p>If you proceed with a larger service (Audit, Blueprint, Outreach, or Retainer), the ₹3,000 consultation fee is deducted from the total cost. You only pay for what you need.</p>
+            </div>
+
+            <div class="process-section">
+                <h3>How It Works:</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Contact</div>
+                        <div class="step-desc">Reach out via email or phone</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Schedule</div>
+                        <div class="step-desc">We'll find a suitable time slot</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Payment</div>
+                        <div class="step-desc">Secure payment confirmation</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Call</div>
+                        <div class="step-desc">Diagnostic video consultation</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Choose Your Contact Method:</h3>
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <h4>📧 Email</h4>
+                    <a href="mailto:vexadigital.in@gmail.com">vexadigital.in@gmail.com</a>
+                    <a href="mailto:vexadigital.in@gmail.com?subject=Consultation Booking Request&body=Hi, I would like to book a consultation call.%0D%0A%0D%0AMy Name:%0D%0AOrganization:%0D%0APreferred Date/Time:%0D%0ABrief Description of Current Situation:" class="book-btn">Send Email</a>
+                </div>
+
+                <div class="contact-card">
+                    <h4>📞 Phone</h4>
+                    <a href="tel:+919958895505">+91 9958895505</a>
+                    <a href="tel:+919958895505" class="book-btn">Call Now</a>
+                </div>
+
+                <div class="contact-card">
+                    <h4>💬 WhatsApp</h4>
+                    <a href="https://wa.me/919958895505">+91 9958895505</a>
+                    <a href="https://wa.me/919958895505?text=Hi, I would like to book a consultation call for my esports organization." class="book-btn" target="_blank">Message on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-card">
+            <h3>What to Prepare Before the Call:</h3>
+            <ul>
+                <li>Brief overview of your organization (team, games, current activities)</li>
+                <li>Current revenue sources (if any)</li>
+                <li>What you've tried so far (sponsorship pitches, business plans, etc.)</li>
+                <li>Your biggest challenge or pain point</li>
+                <li>What you're hoping to achieve</li>
+            </ul>
+            <p style="color: #666; margin-top: 1rem;">Don't worry if you don't have everything figured out—that's what the consultation is for. Come prepared to be honest about your current state.</p>
+        </div>
+
+        <div class="booking-card">
+            <h3>After the Consultation:</h3>
+            <p style="color: #555; line-height: 1.8;">Based on the diagnostic call, I'll recommend the right service for your situation. This could be:</p>
+            <ul>
+                <li><strong>Business Audit</strong> - If you have existing materials that need correction</li>
+                <li><strong>Blueprint Creation</strong> - If you need complete business architecture from scratch</li>
+                <li><strong>Sponsorship Outreach</strong> - If your structure is solid and you need execution help</li>
+                <li><strong>Advisory Retainer</strong> - If you've completed an Audit/Blueprint and need ongoing supervision</li>
+                <li><strong>Nothing</strong> - If your situation doesn't require paid services, I'll tell you that too</li>
+            </ul>
+            <p style="color: #666; margin-top: 1.5rem; font-style: italic;">The goal is to diagnose your actual problem and recommend what you actually need—not sell you the most expensive service.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">VEXA DIGITAL</div>
+            <p>Esports Business Architecture & Advisory</p>
+            
+            <div class="footer-links">
+                <a href="mailto:vexadigital.in@gmail.com">vexadigital.in@gmail.com</a>
+                <a href="tel:+919958895505">+91 9958895505</a>
+                <a href="https://instagram.com/vexadigital.in" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/company/vexa-digital-in/" target="_blank">LinkedIn</a>
+            </div>
+            
+            <p style="font-style: italic; margin: 2rem 0; color: #e0e0e0;">Operating Principle: Very Easy is Never Awesome</p>
+            <p style="color: #888;">VEXA Digital</p>
+        </div>
+    </footer>
+</body>
+</html>
