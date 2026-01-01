@@ -1,0 +1,343 @@
+/* Booking Page Specific Styles */
+
+.booking-page {
+    min-height: 100vh;
+    padding: 3rem 0;
+    background: var(--vexa-light-gray);
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-bottom: 3rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--vexa-orange) 0%, #ff8c5a 100%);
+    width: 25%;
+    transition: width 0.5s ease;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    position: relative;
+}
+
+.step-indicator::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: -1;
+}
+
+.step-indicator:last-child::after {
+    display: none;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.step-indicator.active .step-number {
+    background: var(--vexa-orange);
+    color: white;
+    transform: scale(1.1);
+}
+
+.step-indicator.completed .step-number {
+    background: #4caf50;
+    color: white;
+}
+
+.step-indicator.completed .step-number::before {
+    content: '✓';
+}
+
+.step-label {
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 500;
+}
+
+.step-indicator.active .step-label {
+    color: var(--vexa-orange);
+    font-weight: 600;
+}
+
+/* Form Steps */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Layout */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e0e0e0;
+}
+
+.text-light {
+    color: var(--vexa-text-light);
+}
+
+/* Calendar Styles */
+.timezone-info {
+    background: #fff3e0;
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 4px solid var(--vexa-orange);
+}
+
+.calendar-container {
+    display: grid;
+    gap: 1.5rem;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
+}
+
+.calendar-day-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.calendar-date {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--vexa-text);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--vexa-orange);
+}
+
+.calendar-times {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.5rem;
+}
+
+.time-slot {
+    padding: 0.6rem;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.time-slot:hover {
+    border-color: var(--vexa-orange);
+    background: #fff3e0;
+}
+
+.time-slot.selected {
+    background: var(--vexa-orange);
+    color: white;
+    border-color: var(--vexa-orange);
+}
+
+.time-slot.booked {
+    background: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Booking Summary */
+.booking-summary {
+    display: grid;
+    gap: 2rem;
+}
+
+.summary-section {
+    padding: 1.5rem;
+    background: #fafafa;
+    border-radius: 8px;
+    border-left: 4px solid var(--vexa-orange);
+}
+
+.summary-section h3 {
+    color: var(--vexa-orange);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.summary-section p {
+    margin-bottom: 0.5rem;
+    color: var(--vexa-text-light);
+}
+
+.summary-section strong {
+    color: var(--vexa-text);
+    font-weight: 600;
+}
+
+.summary-price {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border-left-color: var(--vexa-orange);
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--vexa-orange);
+    margin: 1rem 0;
+}
+
+.price-note {
+    font-size: 0.9rem;
+    color: var(--vexa-text-light);
+    font-style: italic;
+}
+
+/* Checkbox Label */
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-top: 0.2rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.checkbox-label span {
+    flex: 1;
+    line-height: 1.6;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    text-align: center;
+    color: white;
+}
+
+.loading-message {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Form Validation */
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+    border-color: #d32f2f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .progress-steps {
+        gap: 0.5rem;
+    }
+    
+    .step-label {
+        font-size: 0.7rem;
+    }
+    
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+    }
+    
+    .calendar-times {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
+    
+    .price-amount {
+        font-size: 2rem;
+    }
+}
