@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - VEXA Digital</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .confirmation-page {
+            min-height: 100vh;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+        }
+
+        .confirmation-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .confirmation-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #4caf50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem auto;
+            animation: scaleIn 0.5s ease;
+        }
+
+        .success-icon::before {
+            content: '✓';
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .confirmation-card h1 {
+            color: var(--vexa-orange);
+            margin-bottom: 1rem;
+        }
+
+        .booking-id {
+            background: #f8f8f8;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--vexa-orange);
+        }
+
+        .details-grid {
+            display: grid;
+            gap: 1.5rem;
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .detail-item {
+            padding: 1.5rem;
+            background: #fafafa;
+            border-radius: 8px;
+            border-left: 4px solid var(--vexa-orange);
+        }
+
+        .detail-item h3 {
+            color: var(--vexa-orange);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .detail-item p {
+            color: var(--vexa-text-light);
+            margin: 0.3rem 0;
+        }
+
+        .calendar-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .preparation-section {
+            background: #fff3e0;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .preparation-section h3 {
+            color: var(--vexa-orange);
+            margin-bottom: 1rem;
+        }
+
+        .preparation-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .preparation-section li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .preparation-section li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--vexa-orange);
+            font-weight: bold;
+        }
+
+        .next-steps {
+            background: #e3f2fd;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .next-steps h3 {
+            color: #1976d2;
+            margin-bottom: 1rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/561636d0-b6ff-40b9-a4db-46a29062b569/2026-01-01T12-44-24-973Z-3ce6c2d8-chat-image-1767271464953-0.jpg" alt="VEXA Digital" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Confirmation Page -->
+    <div class="confirmation-page">
+        <div class="confirmation-container">
+            <div class="confirmation-card">
+                <div class="success-icon"></div>
+                
+                <h1>Booking Confirmed!</h1>
+                <p style="font-size: 1.1rem; color: var(--vexa-text-light);">Your consultation has been successfully booked.</p>
+
+                <div class="booking-id">
+                    <strong>Booking ID:</strong> <span id="bookingId">Loading...</span>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <h3>📅 Date & Time</h3>
+                        <p id="bookingDate">Loading...</p>
+                        <p id="bookingTime">Loading...</p>
+                        <p><strong>Duration:</strong> 30-45 minutes</p>
+                    </div>
+
+                    <div class="detail-item">
+                        <h3>💻 Meeting Platform</h3>
+                        <p><strong>Google Meet</strong></p>
+                        <p id="meetingLink">Meeting link will be sent 15 minutes before the call</p>
+                    </div>
+
+                    <div class="detail-item">
+                        <h3>💳 Payment</h3>
+                        <p><strong>Amount Paid:</strong> ₹3,000</p>
+                        <p><strong>Status:</strong> <span style="color: #4caf50;">Confirmed ✓</span></p>
+                        <p id="paymentId">Payment ID: Loading...</p>
+                    </div>
+                </div>
+
+                <div class="calendar-buttons">
+                    <button class="btn btn-primary" onclick="addToGoogleCalendar()">
+                        📅 Add to Google Calendar
+                    </button>
+                    <button class="btn btn-secondary" onclick="downloadICS()">
+                        📥 Download .ics File
+                    </button>
+                </div>
+
+                <div class="preparation-section">
+                    <h3>What to Prepare Before the Call:</h3>
+                    <ul>
+                        <li>Brief overview of your organization (team, games, current activities)</li>
+                        <li>Current revenue sources (if any)</li>
+                        <li>What you've tried so far (sponsorship pitches, business plans, etc.)</li>
+                        <li>Your biggest challenge or pain point</li>
+                        <li>What you hope to achieve from this consultation</li>
+                    </ul>
+                </div>
+
+                <div class="next-steps">
+                    <h3>What Happens Next:</h3>
+                    <p><strong>1. Confirmation Email:</strong> You'll receive a detailed confirmation email at <span id="userEmail">your email</span> within 5 minutes.</p>
+                    <p><strong>2. Reminder (24 hours before):</strong> We'll send you a reminder email with preparation tips.</p>
+                    <p><strong>3. Meeting Link (15 minutes before):</strong> You'll receive the Google Meet link via email and SMS.</p>
+                    <p><strong>4. After the Call:</strong> You'll receive a follow-up email with recommendations and next steps.</p>
+                </div>
+
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                    <p style="margin: 0;"><strong>Need to Reschedule?</strong></p>
+                    <p style="margin: 0.5rem 0 0 0; color: var(--vexa-text-light);">Please notify us at least 24 hours in advance by emailing <a href="mailto:vexadigital.in@gmail.com">vexadigital.in@gmail.com</a> or calling <a href="tel:+919958895505">+91 9958895505</a></p>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+                    <a href="services.html" class="btn btn-primary">View All Services</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/561636d0-b6ff-40b9-a4db-46a29062b569/2026-01-01T12-44-24-973Z-3ce6c2d8-chat-image-1767271464953-0.jpg" alt="VEXA Digital" class="footer-logo">
+            <p>Esports Business Architecture & Advisory</p>
+            
+            <div class="footer-links">
+                <a href="mailto:vexadigital.in@gmail.com">vexadigital.in@gmail.com</a>
+                <a href="tel:+919958895505">+91 9958895505</a>
+                <a href="https://instagram.com/vexadigital.in" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/company/vexa-digital-in/" target="_blank">LinkedIn</a>
+            </div>
+            
+            <p style="font-style: italic; margin: 2rem 0;">Operating Principle: Very Easy is Never Awesome</p>
+            <p style="color: #888;">VEXA Digital</p>
+        </div>
+    </footer>
+
+    <script>
+        // Load booking data from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookingId = urlParams.get('booking');
+
+        if (bookingId) {
+            // Load from localStorage (in production, this will fetch from Firebase)
+            const bookingData = JSON.parse(localStorage.getItem('lastBooking'));
+            
+            if (bookingData) {
+                // Populate page with booking data
+                document.getElementById('bookingId').textContent = bookingData.bookingId;
+                
+                const date = new Date(bookingData.step2.datetime);
+                document.getElementById('bookingDate').textContent = date.toLocaleDateString('en-IN', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                document.getElementById('bookingTime').textContent = bookingData.step2.time + ' IST';
+                
+                document.getElementById('userEmail').textContent = bookingData.step1.email;
+                
+                if (bookingData.payment) {
+                    document.getElementById('paymentId').textContent = 'Payment ID: ' + bookingData.payment.paymentId;
+                }
+            }
+        }
+
+        function addToGoogleCalendar() {
+            const bookingData = JSON.parse(localStorage.getItem('lastBooking'));
+            if (!bookingData) return;
+
+            const startDate = new Date(bookingData.step2.datetime);
+            const endDate = new Date(startDate.getTime() + 45 * 60000); // 45 minutes later
+
+            const formatDate = (date) => {
+                return date.toISOString().replace(/-|:|\.\d+/g, '');
+            };
+
+            const title = encodeURIComponent('VEXA Digital Consultation');
+            const details = encodeURIComponent('Esports Business Architecture Consultation with VEXA Digital');
+            const location = encodeURIComponent('Google Meet (link will be sent)');
+
+            const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${formatDate(startDate)}/${formatDate(endDate)}&details=${details}&location=${location}`;
+            
+            window.open(url, '_blank');
+        }
+
+        function downloadICS() {
+            const bookingData = JSON.parse(localStorage.getItem('lastBooking'));
+            if (!bookingData) return;
+
+            const startDate = new Date(bookingData.step2.datetime);
+            const endDate = new Date(startDate.getTime() + 45 * 60000);
+
+            const formatDate = (date) => {
+                return date.toISOString().replace(/-|:|\.\d+/g, '');
+            };
+
+            const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:${formatDate(startDate)}
+DTEND:${formatDate(endDate)}
+SUMMARY:VEXA Digital Consultation
+DESCRIPTION:Esports Business Architecture Consultation with VEXA Digital
+LOCATION:Google Meet (link will be sent)
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsContent], { type: 'text/calendar' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'vexa-consultation.ics';
+            link.click();
+        }
+    </script>
+</body>
+</html>
